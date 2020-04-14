@@ -9,7 +9,11 @@
 
 // Para compilar un programa en C:
 /*
+    normal:
     gcc -o nombreArchivoSalida nombrePrograma.c
+    
+    o  en caso de usar math.h:
+    gcc -o nombreArchivoSalida -lm nombrePrograma.c 
 */
 
 // Para ejecutar en linux

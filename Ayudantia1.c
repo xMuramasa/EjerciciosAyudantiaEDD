@@ -1,13 +1,19 @@
 // LEARN GITHUB
 
 #include <stdio.h>
-#include <math.h>
+//#include <math.h>
 
 // Notas rapidas
 
+// Descomentar las secciones que se quiera probar
+
 // Para compilar un programa en C:
 /*
+    normal:
     gcc -o nombreArchivoSalida nombrePrograma.c
+    
+    o  en caso de usar math.h:
+    gcc -o nombreArchivoSalida -lm nombrePrograma.c 
 */
 
 // Para ejecutar en linux
@@ -85,7 +91,8 @@ int main(int argc, char const *argv[])
             Hipotenusa: Imposible de calcular.
 
         
-        #include <math.h>
+        // descomentar la linea con el math.h
+        // PD: no digan que yo les enseñe esto
 
         float cateto1, cateto2;
         float hipotenusa;
@@ -132,7 +139,7 @@ int main(int argc, char const *argv[])
 
             Ingrese c: 10.3 \\
             Hipotenusa: Imposible de calcular.
-
+    
             
         float a, b, c;
 

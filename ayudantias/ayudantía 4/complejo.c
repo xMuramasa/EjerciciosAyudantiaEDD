@@ -4,30 +4,76 @@
 #include "complejo.h"
 #include <math.h>
 
+
+
+
+
 int main() {
-	nroComplejo* nro = crearComplejo(4, 4);
-	toString(nro);
-	printf("%d %d %f", parteReal(nro), parteIm(nro), valorAbsoluto(nro));
 
-	nroComplejo* nro2 = crearComplejo(4, 4);
-	nroComplejo* nro3 = suma(nro, nro2);
-	nroComplejo* nro4 = conjugado(nro3);
+	complex* c1 = buildComplex(3,5);
+	complex* c2 = buildComplex(9,-1);
+	complex* s = sumaComp(c1, c2);
 
-	toString(nro);
-	toString(nro2);
-	toString(nro3);
-	toString(nro4);
+	complex* c1_Conj = conjugado(c1);
 
-	borrarComplejo(nro);
-	borrarComplejo(nro2);
-	borrarComplejo(nro3);
-	borrarComplejo(nro4);
+	printComplex(c1);
+	printComplex(c2);
+	printComplex(s);
+	printComplex(c1_Conj
+	);
 
+	destroyer(c1);
+	destroyer(c2);
+	destroyer(s);
 	return 0;
 }
 
+complex* buildComplex(int re, int im)
+{
 
+	complex *c = (complex *)malloc(sizeof(complex));
 
+	c->real = re;
+	c->imaginario = im;
+	return c;
+}
+
+int re(complex *c)
+{
+	return c->real;
+}
+
+int im(complex *c)
+{
+	return c->imaginario;
+}
+
+double absol(complex *c)
+{
+	return sqrt(pow(re(c), 2) + pow(im(c), 2));
+}
+
+void destroyer(complex *c)
+{
+	free(c);
+}
+
+void printComplex(complex *c)
+{
+	printf("%d+%di\n", re(c), im(c));
+}
+
+complex *conjugado(complex *c){
+	complex* conj = buildComplex(re(c), (-1)*im(c));
+	return conj;
+}
+
+complex* sumaComp(complex* a, complex* b){
+	complex *s = buildComplex(re(a) + re(b), im(a) + im(b));
+	return s;
+}
+
+/*
 nroComplejo* crearComplejo(int im, int real) {
 	nroComplejo* nro = (nroComplejo*) malloc(sizeof(nroComplejo));
 	nro->im = im;
@@ -64,3 +110,5 @@ void toString(nroComplejo* nro) {
 void borrarComplejo(nroComplejo* nro) {
 	free(nro);
 }
+
+*/

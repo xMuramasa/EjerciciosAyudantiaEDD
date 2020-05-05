@@ -13,7 +13,7 @@
     gcc -o nombreArchivoSalida nombrePrograma.c
     
     o  en caso de usar math.h:
-    gcc -o nombreArchivoSalida -lm nombrePrograma.c 
+    gcc -o nombreArchivoSalida nombrePrograma.c -lm
 */
 
 // Para ejecutar en linux
